@@ -9,9 +9,13 @@ const Shop = () => {
 
     const [cart,setCart]=useState([])
     useEffect(()=>{
+        console.log('before fetch')
         fetch('products.json')
         .then(res=>res.json())
-        .then(data=>setProducts(data))
+        .then(data=>{
+            setProducts(data)
+        console.log('after fetch load')
+        })
 
     },[])
 
@@ -25,16 +29,27 @@ const Shop = () => {
     }
 
     useEffect(()=>{
+        console.log('local')
 const storedCart=getStoredCart()
 
 console.log(storedCart)
+const savedCart=[]
+
 for(const id in storedCart){
     console.log(id)
     const addedProduct=products.find(product=>product.id===id)
-    console.log(addedProduct)
-}
+    // console.log(addedProduct)
 
-    },[])
+    if(addedProduct){
+        const quantity=storedCart[id];
+        addedProduct.quantity=quantity
+        console.log(addedProduct)
+        savedCart.push(addedProduct)
+    }
+}
+setCart(savedCart)
+console.log('local finished')
+    }, [products])
 
     return (
         <div className="  grid lg:grid-cols-[4fr,1fr] sm:grid-cols-[3fr,1fr] grid-cols-[1fr,1fr]">
