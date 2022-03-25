@@ -20,13 +20,25 @@ const Shop = () => {
 
     },[])
 
-    const handleAddtoCart=(product)=>{
-        console.log(product)
+    const handleAddtoCart=(sproduct)=>{
+        console.log(sproduct)
+        let newCart=[]
         // cart.push(product)
-        const newCart =[...cart,product];
+        const exits=cart.find(product=>product.id===sproduct.id)
+        if(!exits){
+            sproduct.quantity=1
+            newCart =[...cart,sproduct];
+        }
+
+        else{
+            const restCart=cart.filter(product=>product.id !==sproduct.id)
+            exits.quantity=exits.quantity+1
+            newCart =[...restCart,exits]
+        }
+        // newCart =[...cart,sproduct];
 
         setCart(newCart)
-        addToDb(product.id)
+        addToDb(sproduct.id)
     }
 
     useEffect(()=>{
