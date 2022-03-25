@@ -9,10 +9,10 @@ const Product = (props) => {
 // console.log(props);
    
     return (
-        <div className='w-[300px] h-[510px] border-[1px] rounded-lg border-border-color-cart relative'>
-            <img className='w-[286px] rounded-lg h-auto m-2' src={img} alt='Product'></img>
-            <div className="product-info">
-            <p className='product-name text-xl'>{name}</p>
+        <div className='w-[250px] h-[450px] lg:w-[300px] lg:h-[510px] border-[1px] rounded-lg border-border-color-cart relative'>
+            <img className='w-[220px] lg:w-[286px] rounded-lg h-auto m-[15px] lg:m-2' src={img} alt='Product'></img>
+            <div className="product-info sm:mx-8 my-0 lg:mx-4">
+            <p className='product-name lg:text-xl text-sm'>{name}</p>
             <p><small>Price:${price}</small></p>
             <p><small>Seller:{seller}</small></p>
             <p><small>Ratings:{ratings}</small></p>

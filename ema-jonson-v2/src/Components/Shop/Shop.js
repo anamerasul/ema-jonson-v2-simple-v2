@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import "./Shop.css"
 const Shop = () => {
@@ -23,10 +24,11 @@ const Shop = () => {
     }
 
     return (
-        <div className="shop-container">
+        <div className="  grid lg:grid-cols-[4fr,1fr] sm:grid-cols-[3fr,1fr]">
             {/* <h2>This is shop</h2> */}
 
-            <div className="products-container">
+            <div className="sm:mx-[100px] sm:my-[50px] sm:ml-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-[45px]
+            sm:gap-[9rem]">
                 {/* <h3>This is for product:{products.length}</h3> */}
 
                 {
@@ -38,10 +40,9 @@ const Shop = () => {
 
                 }
             </div>
-            <div className="cart-container">
-                <h4>Order Sumarry</h4>
-                <p>Selected Items:{cart.length}</p>
+            <div className="cart-container ml-2 bg-orange-300 ">
 
+                <Cart cart={cart}></Cart>
             </div>
         </div>
     );

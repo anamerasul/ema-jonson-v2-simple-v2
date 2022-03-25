@@ -27,7 +27,13 @@ module.exports = {
         'header-color':'#1C2B35',
         'border-color-cart':'#95A0A7',
       },
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        'shop-container-grid': '1fr, 4fr',
 
+        // Complex site-specific column configuration
+        'footer': '200px minmax(900px, 1fr) 100px',
+      },
       width:{
         'product-width':'300px'
       },
