@@ -13,14 +13,15 @@ const Cart = (props) => {
     }
 
     const tax= (total* 0.1).toFixed(2)
+    console.log(typeof +tax);
 
-    const gTotal= +total+shipping+tax
+    const gTotal= (+total)+(+shipping)+(+tax)
 
     return (
         <div className="sm:mx-4 py-8 px-4">
             <h4>Order Sumarry</h4>
             <p>Selected Items:{cart.length}</p>
-            <p>Total price:{total}</p>
+            <p>Total price:{total}</p><br />
             <p>Total Shipping:{shipping}</p>
             <p>Tax:{tax}</p>
             <h5>Grand:Total:{gTotal}</h5>
