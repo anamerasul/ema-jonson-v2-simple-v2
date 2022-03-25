@@ -24,7 +24,7 @@ const Shop = () => {
     }
 
     return (
-        <div className="  grid lg:grid-cols-[4fr,1fr] sm:grid-cols-[3fr,1fr]">
+        <div className="  grid lg:grid-cols-[4fr,1fr] sm:grid-cols-[3fr,1fr] grid-cols-[1fr,1fr]">
             {/* <h2>This is shop</h2> */}
 
             <div className="sm:mx-[100px] sm:my-[50px] sm:ml-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-[45px]
@@ -40,7 +40,7 @@ const Shop = () => {
 
                 }
             </div>
-            <div className="cart-container ml-2 bg-orange-300 ">
+            <div className="cart-container sticky top-0 h-[900px] ml-auto bg-orange-300 w-full ">
 
                 <Cart cart={cart}></Cart>
             </div>
