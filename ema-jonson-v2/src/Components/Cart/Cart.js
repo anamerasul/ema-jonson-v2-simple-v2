@@ -6,10 +6,12 @@ const Cart = (props) => {
     console.log(cart)
     let total=0
     let shipping=0
+    let quantity=0
     for(const product of cart){
         console.log(product)
-        total=total+product.price
-        shipping=shipping+product.shipping
+        total=total+product.price*product.quantity
+        shipping=shipping+product.shipping*product.quantity
+        quantity=+quantity+product.quantity
     }
 
     const tax= (total* 0.1).toFixed(2)
@@ -20,7 +22,7 @@ const Cart = (props) => {
     return (
         <div className="sm:mx-4 py-8 px-4">
             <h4>Order Sumarry</h4>
-            <p>Selected Items:{cart.length}</p>
+            <p>Selected Items:{quantity}</p>
             <p>Total price:{total}</p><br />
             <p>Total Shipping:{shipping}</p>
             <p>Tax:{tax}</p>
